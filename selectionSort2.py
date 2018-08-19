@@ -9,23 +9,19 @@ def selectionSort(alist):
                 ismall = i
         alist[index], alist[ismall] = alist[ismall], alist[index]
 
-filename=input('Enter file path:')
-file = open(filename, 'r')
+filename=raw_input('Enter file path:')
+file = open(filename, 'r+')
 
 
 results = [int(i) for i in file]
 
 selectionSort(results)
 
+arquivo = open('resultado.txt', 'w')
+arquivo.close()
+
 for i in range(len(results)):
-    
-    resultado = open('resultado.txt', 'a')
-    resultado.write(str(results[i])+ '\n') 
+
+    resultado = open('resultado.txt', 'a+')
+    resultado.write(str(results[i])+ '\n')
     resultado.close()
-
-
-    
-
-
-
-    
